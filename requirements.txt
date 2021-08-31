@@ -1,0 +1,10 @@
+requests-html
+beautifulsoup4
+isort 
+black 
+flake8
+yarl
+logzero
+pandas
+matplotlib
+jupyter
