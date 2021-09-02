@@ -1,6 +1,7 @@
+import time
 import sys
 import os
-import time 
+import random
 
 from requests_html import HTMLSession
 from yarl import URL
@@ -15,7 +16,7 @@ def downloader(session, url, target, overwrite):
     else:    
         query = URL(url).query['s'] 
         path = URL(url).path.replace("/", "_") + ".html"
-        dirname = os.path.join(target,  query)
+        dirname = os.path.join(target, query)
         if not os.path.exists(dirname):
             os.makedirs(dirname)
         html = os.path.join(dirname, path)
@@ -34,13 +35,16 @@ def downloader(session, url, target, overwrite):
 if __name__ == '__main__':
 
     session = HTMLSession()
-    pages = range(1, 5)
+    pages = range(1, 103) #56
     for i in pages:
-        url = f'https://kaiten-heiten.com/category/kantou_koushinetsu/tokyo/page/{i}/?s=%E3%80%90%E9%96%89%E5%BA%97%E3%80%91'
+        #閉店URL
+        #url = f'https://kaiten-heiten.com/category/kantou_koushinetsu/tokyo/page/{i}/?s=%E3%80%90%E9%96%89%E5%BA%97%E3%80%91'
+        #開店URL
+        url = f'https://kaiten-heiten.com/category/kantou_koushinetsu/tokyo/page/{i}/?s=%E3%80%90%E9%96%8B%E5%BA%97%E3%80%91'
         target = "download"
         overwrite = True
         downloader(session, url, target, overwrite)
-        time.sleep(3)
+        time.sleep(random.randint(2,4))
        
         
 

@@ -2,7 +2,7 @@ import glob
 from bs4 import BeautifulSoup
 
 
-def get_details(soup ):
+def get_details(soup):
     """
     soup: soup.select_one("article") もしくは、soup.select("article")[0] を想定
     """
@@ -19,7 +19,7 @@ def get_details(soup ):
         "post_time":post_time,
         "url":url,
         "category":category,
-        "category_tag":category_tag,}
+        "category_tag":category_tag}
 
 
 def fetch_all(soup):
