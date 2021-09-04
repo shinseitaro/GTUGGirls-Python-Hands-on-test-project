@@ -5,12 +5,21 @@ GTUGGirls-Python-Hands-on test project
 
 - GTUGGirls-Python-Hands-on のポイントを抑えたスクレイピング例
 
-## コードの解説
+## 始め方
 
-1. src/download.py 
-    - 開店閉店.comさんのコンテンツをダウンロードしてローカルに保存
-1. src/scraping.py
-    - ローカルにダウンロードしたhtmlをスクレイピングして、必要なデータを取得
-1. src/analysis.py 
-    - 取得したデータの処理、可視化    
-1. src/main.py 
+```bash
+$ git clone https://github.com/shinseitaro/GTUGGirls-Python-Hands-on-test-project.git
+$ cd GTUGGirls-Python-Hands-on-test-project
+$ python -m venv .venv
+```
+```bash
+# mac / linux
+$ source .venv/bin/activate
+
+# windows
+$ .venv\Scripts\activate
+```
+```bash
+$ pip install -U pip
+$ pip install -r requirements.txt
+```
